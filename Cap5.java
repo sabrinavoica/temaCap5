@@ -1,3 +1,4 @@
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +11,26 @@ public class Cap5 {
       //  alDoileaLink ();
       //  alTreileaLink ();
       //  alPatruleaLink ();
+        ChromeDriver driver = WebDriver.createChromeDriver ();
+        driver.get("https://demoqa.com/alerts");
+
+        //   WebElement firstButton = driver.findElement (By.id ("alertButton"));
+        //   firstButton.click ();
+        WebElement thirdButton = driver.findElement (By.cssSelector ("#confirmButton"));
+//        thirdButton.click ();
+        WebElement fourButton = driver.findElement (By.cssSelector ("#promtButton"));
+        fourButton.click ();
+
+        Alert alert = driver.switchTo ().alert ();
+        alert.sendKeys ("Sabrina");
+        alert.accept ();
+        //  fourButton.click ();
+        //   alert.sendKeys ("Text123456");
+        //   alert.dismiss ();
+        //   alert.accept();
+        //  alert.dismiss ();
+
+        driver.close ();
 
 
     }
